@@ -53,10 +53,11 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             }
             print(results)
             if let firstResult = results.first{
-                if firstResult.identifier.contains("Bil"){
-                    self.navigationItem.title = "Car"
+                if firstResult.identifier.contains("hotdog"){
+                    print(results.first)
+                    self.navigationItem.title = "Pølse"
                 }else {
-                    self.navigationItem.title = "Ikke en bil"
+                    self.navigationItem.title = "Dette er ikke en pølse"
                 }
             }
         }
@@ -64,7 +65,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         do {
             try! handler.perform([request])
         } catch {
-            print(error)
+            print("could not perform \(error)")
         }
         
         
